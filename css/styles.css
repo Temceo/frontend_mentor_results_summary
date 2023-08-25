@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+
+:root {
+  /* primary colours */
+  --light-red: hsl(0, 100%, 67%);
+  --orange-yellow: hsl(39, 100%, 56%);
+  --green-teal: hsl(166, 100%, 37%);
+  --cobalt-blue: hsl(234, 85%, 45%);
+
+  /* gradients */
+
+  /* background */
+  --light-slate-blue: hsl(252, 100%, 67%);
+  --light-royal-blue: hsl(241, 81%, 54%);
+  /* circle */
+  --violet-blue: hsla(256, 72%, 46%, 1);
+  --persian-blue: hsla(241, 72%, 46%, 0);
+
+  /* neutral */
+  --white: hsl(0, 0%, 100%);
+  --pale-blue: hsl(221, 100%, 96%);
+  --light-lavender: hsl(241, 100%, 89%);
+  --dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+/* generic plans */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  background: var(--pale-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+img,
+svg {
+  display: block;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.attribution {
+  margin-inline: auto;
+}
+
+/* left side container */
+#result {
+  background: linear-gradient(
+    to bottom,
+    var(--light-slate-blue),
+    var(--light-royal-blue)
+  );
+  color: var(--light-lavender);
+  padding: 1rem;
+}
+
+#result h2 {
+  color: var(--white);
+}
+
+#result > div:last-child {
+  margin-top: 0;
+  font-size: 0.5rem;
+}
+
+#result > div:last-child p {
+  font-size: 0.7rem;
+}
+
+.score {
+  display: grid;
+  place-content: center;
+  margin-inline: auto;
+  width: 8rem;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(
+    to bottom,
+    var(--light-slate-blue),
+    var(--light-royal-blue)
+  );
+  border-radius: 50%;
+}
+
+.score span {
+  display: block;
+  width: 100%;
+  color: var(--white);
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+/* right side container */
+.subject {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0.6rem 0.3rem 0.3rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+}
+
+.subject > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.subject span {
+  color: grey;
+}
+
+/* subjects / scores styling */
+.reaction {
+  background: hsla(0, 100%, 67%, 0.2);
+}
+
+.reaction div:first-child {
+  color: var(--light-red);
+}
+
+.memory {
+  background: hsla(39, 100%, 56%, 0.2);
+}
+
+.memory div:first-child {
+  color: var(--orange-yellow);
+}
+.verbal {
+  background: hsla(166, 100%, 37%, 0.2);
+}
+
+.verbal div:first-child {
+  color: var(--green-teal);
+}
+
+.visual {
+  background: hsla(241, 100%, 89%, 0.2);
+}
+
+.visual div:first-child {
+  color: var(--cobalt-blue);
+}
+
+/* continue button */
+#btn-continue {
+  width: 100%;
+  color: #fff;
+  font-weight: 700;
+  margin-top: 1rem;
+  padding: 0.7rem;
+  background: var(--dark-gray-blue);
+  cursor: pointer;
+  border-radius: 100vw;
+  border: none;
+}
+
+#btn-continue:hover {
+  background: linear-gradient(
+    to bottom,
+    var(--light-slate-blue),
+    var(--light-royal-blue)
+  );
+}
+
+@media (min-width: 600px) {
+  body {
+    min-height: 100vh;
+  }
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 10px 10px 40px #ccc;
+    border-radius: 20px;
+  }
+
+  #result,
+  #summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1rem;
+    flex: 1 1 0;
+  }
+
+  /* left side container */
+  #result {
+    border-radius: 20px;
+  }
+}
